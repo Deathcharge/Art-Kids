@@ -99,7 +99,7 @@ st.markdown("""
     
     .cta-button {
         display: inline-block;
-        background-color: #e07a5f;
+        background-color: #2a5f7f;
         color: white;
         padding: 0.75rem 1.5rem;
         border-radius: 6px;
@@ -107,11 +107,14 @@ st.markdown("""
         font-weight: 600;
         margin: 0.5rem 0.5rem 0.5rem 0;
         transition: all 0.3s ease;
+        border: 2px solid #2a5f7f;
     }
     
     .cta-button:hover {
-        background-color: #c96846;
+        background-color: #1e4a5f;
+        border-color: #1e4a5f;
         transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(42, 95, 127, 0.3);
     }
     
     /* Responsive design fixes */
@@ -552,18 +555,18 @@ elif selected == "Get Started":
         """)
         
         st.markdown("""
-        <div style="background-color: #f5f7fa; padding: 2rem; border-radius: 8px; margin: 1.5rem 0;">
-            <h4>📞 Call Us</h4>
-            <p style="font-size: 1.2rem; margin: 0;"><strong>706-573-0073</strong></p>
-            <p style="color: #666; margin-top: 0.5rem;">Ask about current class locations and schedule</p>
+        <div style="background: linear-gradient(135deg, #2a5f7f 0%, #4a8fbf 100%); color: white; padding: 2rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <h4 style="color: white; margin: 0 0 0.5rem 0; font-size: 1.1rem;">📞 Call Us</h4>
+            <p style="font-size: 1.2rem; margin: 0; font-weight: 600;">706-573-0073</p>
+            <p style="color: rgba(255,255,255,0.9); margin-top: 0.5rem; font-size: 0.95rem;">Ask about current class locations and schedule</p>
         </div>
         """, unsafe_allow_html=True)
         
         st.markdown("""
-        <div style="background-color: #f5f7fa; padding: 2rem; border-radius: 8px; margin: 1.5rem 0;">
-            <h4>📧 Email Us</h4>
-            <p style="font-size: 1.1rem; margin: 0;"><strong>anartlesson@gmail.com</strong></p>
-            <p style="color: #666; margin-top: 0.5rem;">Tell us about your student and we'll respond within 24 hours</p>
+        <div style="background: linear-gradient(135deg, #2a5f7f 0%, #4a8fbf 100%); color: white; padding: 2rem; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <h4 style="color: white; margin: 0 0 0.5rem 0; font-size: 1.1rem;">📧 Email Us</h4>
+            <p style="font-size: 1.1rem; margin: 0; font-weight: 600;">anartlesson@gmail.com</p>
+            <p style="color: rgba(255,255,255,0.9); margin-top: 0.5rem; font-size: 0.95rem;">Tell us about your student and we'll respond within 24 hours</p>
         </div>
         """, unsafe_allow_html=True)
     
