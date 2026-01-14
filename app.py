@@ -54,10 +54,10 @@ st.markdown("""
     }
     
     .benefit-box {
-        background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+        background: linear-gradient(135deg, #2a5f7f 0%, #4a8fbf 100%);
+        color: white;
         padding: 1.5rem;
         border-radius: 8px;
-        border-left: 4px solid #2a5f7f;
         margin-bottom: 1.5rem;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         min-height: 120px;
@@ -68,14 +68,15 @@ st.markdown("""
     
     .benefit-box h4 {
         margin: 0 0 0.5rem 0;
-        color: #2a5f7f;
+        color: white;
         font-size: 1.1rem;
     }
     
     .benefit-box p {
         margin: 0;
-        color: #666;
+        color: rgba(255,255,255,0.9);
         line-height: 1.4;
+        font-size: 0.95rem;
     }
     
     .stat-card {
@@ -272,7 +273,7 @@ if selected == "Home":
                     </p>
                 </div>
                 """, unsafe_allow_html=True)
-                st.markdown('<a href="pitch-deck.html" target="_blank" style="text-decoration: none;"><button style="background: #2a5f7f; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; width: 100%;">🔗 Open Full Presentation</button></a>', unsafe_allow_html=True)
+                st.info("💡 **Tip:** Download the pitch deck below to view the full presentation offline, or open it in your browser after downloading.")
         
         with col_download:
             # Create download button for pitch deck
@@ -286,7 +287,7 @@ if selected == "Home":
                 mime="text/html",
                 use_container_width=True
             )
-            st.markdown("*Perfect for offline viewing and sharing*")
+            st.markdown("*Download and open in your browser to view the full presentation*")
     
     with col2:
         st.image("assets/images/art-kids-placeholder.svg", use_column_width=True)
