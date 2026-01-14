@@ -546,7 +546,7 @@ elif selected == "FAQ":
 elif selected == "Get Started":
     st.markdown('<h2 class="section-title">Get Started with Art Kids</h2>', unsafe_allow_html=True)
     
-    col1, col2 = st.columns(2)
+    col1, col2 = st.columns([1, 1.3])
     
     with col1:
         st.markdown("""
