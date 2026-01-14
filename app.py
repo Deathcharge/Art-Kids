@@ -265,7 +265,7 @@ if selected == "Home":
         st.markdown("### 📊 Program Presentation")
         st.markdown("Download our comprehensive pitch deck to learn more about the Art Kids program:")
         
-        col_preview, col_download = st.columns(2)
+        col_preview, col_download = st.columns([1, 2])
         
         with col_preview:
             if st.button("👁️ Preview Pitch Deck", use_container_width=True):
@@ -286,36 +286,34 @@ if selected == "Home":
                 st.info("💡 **Tip:** Download the pitch deck below to view the full presentation offline, or open it in your browser after downloading.")
         
         with col_download:
-            # Create two columns for download buttons
-            download_col1, download_col2 = st.columns(2)
+            # Create download buttons with full width
+            with open("pitch-deck.html", "r", encoding="utf-8") as f:
+                pitch_deck_content = f.read()
             
-            with download_col1:
-                # Create download button for pitch deck
-                with open("pitch-deck.html", "r", encoding="utf-8") as f:
-                    pitch_deck_content = f.read()
-                
-                st.download_button(
-                    label="📥 Download Pitch Deck",
-                    data=pitch_deck_content,
-                    file_name="Art_Kids_Pitch_Deck.html",
-                    mime="text/html",
-                    use_container_width=True
-                )
-                st.markdown("*HTML presentation*")
+            st.download_button(
+                label="📥 Download Pitch Deck",
+                data=pitch_deck_content,
+                file_name="Art_Kids_Pitch_Deck.html",
+                mime="text/html",
+                use_container_width=True
+            )
+            st.markdown("*HTML presentation*")
             
-            with download_col2:
-                # Create download button for overview text
-                with open("art-kids-overview.txt", "r", encoding="utf-8") as f:
-                    overview_content = f.read()
-                
-                st.download_button(
-                    label="📄 Download Program Overview",
-                    data=overview_content,
-                    file_name="Art_Kids_Program_Overview.txt",
-                    mime="text/plain",
-                    use_container_width=True
-                )
-                st.markdown("*Text summary*")
+            # Add some space between buttons
+            st.markdown("<br>", unsafe_allow_html=True)
+            
+            # Create download button for overview text
+            with open("art-kids-overview.txt", "r", encoding="utf-8") as f:
+                overview_content = f.read()
+            
+            st.download_button(
+                label="📄 Download Program Overview",
+                data=overview_content,
+                file_name="Art_Kids_Program_Overview.txt",
+                mime="text/plain",
+                use_container_width=True
+            )
+            st.markdown("*Text summary*")
     
     with col2:
         st.image("assets/images/art-kids-placeholder.svg", use_column_width=True)
