@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Kids - Pitch Presentation</title>
+  <style>
+    :root {
+      --color-primary: #2a5f7f;
+      --color-primary-light: #4a8fbf;
+      --color-accent: #e07a5f;
+      --color-success: #4a9d6f;
+      --color-bg-dark: #0f1419;
+      --color-bg-light: #f5f7fa;
+      --color-text: #2c3e50;
+      --color-text-light: #7f8c8d;
+      --color-white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.4;
+      color: var(--color-text);
+      background-color: var(--color-white);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .slide {
+      width: 960px;
+      height: 540px;
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+      background: var(--color-white);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      flex-direction: column;
+      position: relative;
+    }
+
+    .slide.title-slide {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      color: var(--color-white);
+      text-align: center;
+      padding: 4rem;
+    }
+
+    .slide.closing {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      color: var(--color-white);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3.75rem;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      font-size: 2.25rem;
+      color: var(--color-primary);
+      margin: 0 0 1.5rem 0;
+      font-weight: 700;
+    }
+
+    .slide.title-slide h1,
+    .slide.closing h1 {
+      color: var(--color-white);
+    }
+
+    .slide.closing h2 {
+      color: var(--color-white);
+      font-size: 3rem;
+    }
+
+    .tagline {
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin: 0 0 2rem 0;
+      opacity: 0.95;
+    }
+
+    .contact {
+      font-size: 1rem;
+      margin-top: 2rem;
+      opacity: 0.85;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      margin: 1.5rem 0 0.8rem 0;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: var(--color-text);
+      line-height: 1.8;
+      margin: 0 0 1rem 0;
+    }
+
+    .slide.closing p {
+      color: var(--color-white);
+      font-size: 1.25rem;
+    }
+
+    .highlight {
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    ul {
+      font-size: 1.125rem;
+      color: var(--color-text);
+      line-height: 2;
+      margin: 1rem 0 1rem 2rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.8rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+      width: 100%;
+    }
+
+    .stat-box {
+      background: var(--color-bg-light);
+      padding: 2rem;
+      border-radius: 8px;
+      border-left: 5px solid var(--color-accent);
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin: 0 0 0.5rem 0;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--color-text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+
+    .stat-box p {
+      font-size: 0.95rem;
+      margin: 0.8rem 0 0 0;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 1.5rem 0;
+      width: 100%;
+    }
+
+    .column h4 {
+      font-size: 1.1rem;
+      color: var(--color-primary);
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+    }
+
+    .column ul {
+      margin: 0 0 0 1.5rem;
+      padding: 0;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+      width: 100%;
+    }
+
+    .benefit-card {
+      background: var(--color-white);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 2px solid var(--color-bg-light);
+      transition: all 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      border-color: var(--color-accent);
+      box-shadow: 0 4px 12px rgba(224, 122, 95, 0.1);
+    }
+
+    .benefit-icon {
+      font-size: 2.5rem;
+      margin: 0 0 0.8rem 0;
+    }
+
+    .benefit-card h4 {
+      font-size: 1.2rem;
+      color: var(--color-primary);
+      margin: 0 0 0.5rem 0;
+      font-weight: 600;
+    }
+
+    .benefit-card p {
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      margin: 0;
+    }
+
+    .comparison {
+      margin: 2rem 0;
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .comparison th {
+      background: var(--color-primary);
+      color: var(--color-white);
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .comparison td {
+      padding: 1rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .comparison tr:nth-child(even) {
+      background: var(--color-bg-light);
+    }
+
+    .cta-section {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--color-accent);
+      color: var(--color-white);
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .cta-button:hover {
+      background: #c96846;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(224, 122, 95, 0.2);
+    }
+
+    .contact-info {
+      font-size: 1.1rem;
+      line-height: 2;
+      margin-top: 2rem;
+    }
+
+    .contact-info a {
+      color: var(--color-white);
+      text-decoration: underline;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 900px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="slide title-slide p-16 col">
+    <h1>Art Kids</h1>
+    <p class="tagline">Advancing Arts Education in Phoenix City Schools</p>
+    <p class="contact">📞 706-573-0073 | 📧 anartlesson@gmail.com</p>
+  </section>
+
+  <section class="slide p-16 col">
+    <div class="content">
+      <h2>The Problem: A Crisis in Arts Education</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-number">55%</div>
+          <div class="stat-label">Alabama Schools</div>
+          <p>Get little to no art instruction</p>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">93%</div>
+          <div class="stat-label">Lowest Performing Schools</div>
+          <p>Have minimal art access</p>
+        </div>
+      </div>
+      <p style="margin-top: 2rem;">
+        This creates a <span class="highlight">massive achievement gap</span> where students in low-performing schools are deprived of proven learning benefits.
+      </p>
+      <p>
+        Meanwhile, <span class="highlight">90% of top-performing schools</span> have high art access, demonstrating the direct link between arts education and academic success.
+      </p>
+    </div>
+  </section>
+
+  <section class="slide p-16 col">
+    <div class="content">
+      <h2>Why Arts Matter</h2>
+      <p>Art is not a luxury—it's essential to student development:</p>
+      <div class="benefits">
+        <div class="benefit-card">
+          <div class="benefit-icon">👁️</div>
+          <h4>Hand-Eye Coordination</h4>
+          <p>Builds fine motor skills and motor control</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🧠</div>
+          <h4>Spatial Recognition</h4>
+          <p>Critical for math, science, and engineering</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🔧</div>
+          <h4>Problem-Solving Skills</h4>
+          <p>Develops creative thinking and innovation</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <h4>Decision Making</h4>
+          <p>Strengthens critical thinking abilities</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🧩</div>
+          <h4>Critical Thinking</h4>
+          <p>Encourages analysis and evaluation</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💬</div>
+          <h4>Constructive Criticism</h4>
+          <p>Builds resilience and growth mindset</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide p-16 col">
+    <div class="content">
+      <h2 style="color: var(--color-accent);">Introducing Art Kids</h2>
+      <h3>A Supplemental Art Program for Aspiring Young Artists</h3>
+      <div class="two-column">
+        <div class="column">
+          <h4>What We Offer</h4>
+          <ul>
+            <li>Exposure to <span class="highlight">multiple mediums</span></li>
+            <li>Instruction in <span class="highlight">advanced techniques</span></li>
+            <li>Support for talented and interested students</li>
+            <li>Weekly instruction (3:30-4:30 PM)</li>
+            <li>Classes at partner schools (fundraiser model)</li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4>Our Proven Track Record</h4>
+          <ul>
+            <li>Former students earned <span class="highlight">state & national awards</span></li>
+            <li>Teaching experience at <span class="highlight">Columbus studio</span></li>
+            <li>Success model: similar to <span class="highlight">Drama Kids program</span></li>
+            <li>Ready to elevate Phoenix City students</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide p-16 col">
+    <div class="content">
+      <h2>How Art Kids Works</h2>
+      <h3>Parent-Funded Model | Comparable to Drama Kids</h3>
+      <table class="comparison">
+        <tr>
+          <th>Element</th>
+          <th>Details</th>
+        </tr>
+        <tr>
+          <td><strong>Schedule</strong></td>
+          <td>Weekly classes, 3:30–4:30 PM</td>
+        </tr>
+        <tr>
+          <td><strong>Location</strong></td>
+          <td>Various schools throughout Phoenix City</td>
+        </tr>
+        <tr>
+          <td><strong>Pricing</strong></td>
+          <td>Parent-funded, comparable to Drama Kids</td>
+        </tr>
+        <tr>
+          <td><strong>School Partnership</strong></td>
+          <td>Percentage of fees donated to host school</td>
+        </tr>
+        <tr>
+          <td><strong>Target Students</strong></td>
+          <td>Students showing interest or talent in visual arts</td>
+        </tr>
+        <tr>
+          <td><strong>Focus</strong></td>
+          <td>Variety of mediums + advanced techniques</td>
+        </tr>
+      </table>
+      <p style="margin-top: 2rem; font-size: 1rem; color: var(--color-text-light);">
+        <strong>Advantage:</strong> Schools benefit from fundraising while students gain access to quality instruction. Win-win partnership.
+      </p>
+    </div>
+  </section>
+
+  <section class="slide p-16 col">
+    <div class="content">
+      <h2>Why Art Kids Will Succeed</h2>
+      <h3>Proven Model + Local Expertise</h3>
+      <div style="margin: 2rem 0;">
+        <h4 style="font-size: 1.1rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1rem;">✓ Drama Kids Success Model</h4>
+        <p>Demonstrated that supplemental arts programs fill the gap left by underfunded curricula. Art Kids applies this proven approach to visual arts.</p>
+
+        <h4 style="font-size: 1.1rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1rem; margin-top: 1.5rem;">✓ Teaching Experience & Results</h4>
+        <p>Students trained at our Columbus studio have won <span class="highlight">multiple state and national art awards</span>. We know how to cultivate excellence.</p>
+
+        <h4 style="font-size: 1.1rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1rem; margin-top: 1.5rem;">✓ Addressing a Real Need</h4>
+        <p>Phoenix City students deserve the same competitive opportunities as students in well-funded districts. Art Kids levels the playing field.</p>
+
+        <h4 style="font-size: 1.1rem; color: var(--color-primary); font-weight: 600; margin-bottom: 1rem; margin-top: 1.5rem;">✓ Sustainable & Scalable</h4>
+        <p>Parent-funded model means no burden on school budgets. Can expand to multiple schools and class offerings.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide p-16 col" style="background: var(--color-bg-light); color: var(--color-text);">
+    <div class="content" style="text-align: center;">
+      <h2>Let's Bring Excellence in Arts to Every Student</h2>
+      <p style="font-size: 1.2rem; margin: 2rem 0; line-height: 1.9;">
+        Art Kids is ready to launch. We're seeking:
+      </p>
+      <ul style="list-style: none; margin: 2rem 0; font-size: 1.1rem;">
+        <li><strong>✓ School partnerships</strong> to host classes</li>
+        <li><strong>✓ Interested students</strong> and families</li>
+        <li><strong>✓ Community support</strong> to expand access</li>
+      </ul>
+      <div class="cta-section">
+        <a href="tel:7065730073" class="cta-button">📞 Call: 706-573-0073</a>
+        <a href="mailto:anartlesson@gmail.com" class="cta-button">📧 Email: anartlesson@gmail.com</a>
+      </div>
+      <p style="margin-top: 2rem; font-size: 1rem; color: var(--color-text-light);">
+        <em>Visit us to discuss how Art Kids can benefit your school community</em>
+      </p>
+    </div>
+  </section>
+
+  <section class="slide closing p-16 col">
+    <div class="content">
+      <h2>Art Kids: Advancing Arts, Advancing Students</h2>
+      <p style="font-size: 1.3rem; margin-top: 2rem;">
+        Every student deserves access to quality art instruction. <span style="text-decoration: underline;">Let's make it happen.</span>
+      </p>
+      <div class="contact-info">
+        <div>📞 <a href="tel:7065730073">706-573-0073</a></div>
+        <div>📧 <a href="mailto:anartlesson@gmail.com">anartlesson@gmail.com</a></div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
