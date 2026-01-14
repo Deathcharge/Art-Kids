@@ -3,32 +3,14 @@
 # If false, makes your Streamlit script start as a module.
 developmentMode = false
 
-# Allows you to type a variable or string by itself in a single line of Python code to write it to the app.
-dataFrameSerialization = "legacy"
-
 [logger]
 
 # Level of logging: 'error', 'warning', 'info', 'debug'.
 level = "info"
 
-[client]
-
-# Whether to enable st.cache.
-caching = true
-
-# If false, will attempt to open a new tab or window every time Streamlit is
-# called. If true, will only open a new tab the first time Streamlit is called.
-showSidebarNavigation = true
-
-# Controls whether uncaught app exceptions are displayed in the browser. By
-# default, this is set to True and Streamlit displays app exceptions and
-# associated tracebacks in the browser.
-showErrorDetails = true
-
 [server]
 
-# List of folders that should not be watched for changes. This impacts both
-# "Run on Save" and @st.cache.
+# List of folders that should not be watched for changes.
 folderWatchBlacklist = ['']
 
 # Change the type of file watcher used by Streamlit, or turn it off completely.
@@ -63,6 +45,15 @@ enableXsrfProtection = true
 
 # Max size, in megabytes, for files uploaded with the file_uploader.
 maxUploadSize = 200
+
+[browser]
+
+# Internet address where users should point their browsers in order to connect to
+# the app. Can be IP address or DNS name and path.
+serverAddress = "localhost"
+
+# Whether to send usage statistics to Streamlit.
+gatherUsageStats = false
 
 # Max size, in megabytes, of messages that can be sent via the WebSocket connection.
 maxMessageSize = 200
