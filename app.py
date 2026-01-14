@@ -572,6 +572,7 @@ elif selected == "Get Started":
         """, unsafe_allow_html=True)
     
     with col2:
+        st.markdown('<div style="margin-left: 2rem;">', unsafe_allow_html=True)
         st.markdown("### What to Expect")
         
         st.markdown("""
@@ -592,6 +593,7 @@ elif selected == "Get Started":
         - Your student attends their first Art Kids class
         - They'll be ready to start developing their artistic skills
         """)
+        st.markdown('</div>', unsafe_allow_html=True)
     
     st.markdown("---")
     
