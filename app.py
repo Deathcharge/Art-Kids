@@ -276,6 +276,11 @@ if selected == "Home":
                         Our professional presentation covers the art education gap, program benefits, 
                         implementation details, and success metrics. Perfect for schools, partners, and stakeholders.
                     </p>
+                    <br>
+                    <h4 style="color: #2a5f7f; margin: 0.5rem 0 0.5rem 0;">📄 Program Overview</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: #666;">
+                        Quick text summary of the Art Kids program, perfect for sharing via email or quick reference.
+                    </p>
                 </div>
                 """, unsafe_allow_html=True)
                 st.info("💡 **Tip:** Download the pitch deck below to view the full presentation offline, or open it in your browser after downloading.")
@@ -293,6 +298,19 @@ if selected == "Home":
                 use_container_width=True
             )
             st.markdown("*Download and open in your browser to view the full presentation*")
+            
+            # Create download button for overview text
+            with open("art-kids-overview.txt", "r", encoding="utf-8") as f:
+                overview_content = f.read()
+            
+            st.download_button(
+                label="📄 Download Program Overview",
+                data=overview_content,
+                file_name="Art_Kids_Program_Overview.txt",
+                mime="text/plain",
+                use_container_width=True
+            )
+            st.markdown("*Quick text summary of the Art Kids program*")
     
     with col2:
         st.image("assets/images/art-kids-placeholder.svg", use_column_width=True)
