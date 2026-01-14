@@ -153,15 +153,69 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Navigation using sidebar
-with st.sidebar:
-    st.markdown("### 🎨 Art Kids Navigation")
-    selected = st.radio(
-        "Choose a page:",
-        ["Home", "About", "Program Details", "Why Art Matters", "FAQ", "Get Started"],
-        index=0,
-        label_visibility="collapsed"
-    )
+# Navigation using horizontal button bar
+st.markdown("""
+<style>
+    .nav-container {
+        background: linear-gradient(135deg, #2a5f7f 0%, #4a8fbf 100%);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .nav-buttons {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .nav-button {
+        background: rgba(255,255,255,0.1);
+        color: white;
+        border: 1px solid rgba(255,255,255,0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+    .nav-button:hover {
+        background: rgba(255,255,255,0.2);
+        transform: translateY(-1px);
+    }
+    .nav-button.active {
+        background: #e07a5f;
+        border-color: #e07a5f;
+    }
+    @media (max-width: 768px) {
+        .nav-buttons {
+            gap: 0.25rem;
+        }
+        .nav-button {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+        }
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# Create horizontal navigation using columns
+nav_options = ["🏠 Home", "ℹ️ About", "📚 Program Details", "💡 Why Art Matters", "❓ FAQ", "🚀 Get Started"]
+cols = st.columns(len(nav_options))
+
+selected = None
+for i, option in enumerate(nav_options):
+    with cols[i]:
+        if st.button(option, key=f"nav_{i}", use_container_width=True):
+            selected = option.split(" ", 1)[1]  # Remove emoji, keep text
+
+# Default to Home if no button clicked
+if selected is None:
+    selected = st.session_state.get('current_page', 'Home')
+else:
+    st.session_state.current_page = selected
 
 # ============ HOME PAGE ============
 if selected == "Home":
@@ -198,7 +252,7 @@ if selected == "Home":
         """, unsafe_allow_html=True)
     
     with col2:
-        st.image("https://via.placeholder.com/400x300/2a5f7f/ffffff?text=Art+Kids+Community", use_column_width=True)
+        st.image("assets/images/art-kids-placeholder.svg", use_column_width=True)
 
 # ============ ABOUT PAGE ============
 elif selected == "About":

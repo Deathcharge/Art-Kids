@@ -5,7 +5,7 @@ Art Kids is a Streamlit web application promoting a supplemental art education p
 
 ## Architecture
 - **Single-file Streamlit app** (`app.py`) with conditional page rendering
-- **Navigation**: Uses `st.sidebar` with `st.radio` for clean sidebar navigation with 6 pages
+- **Navigation**: Uses horizontal button navigation with `st.columns` and `st.button` for clean top navigation with 6 pages
 - **Styling**: Custom CSS embedded via `st.markdown()` with `unsafe_allow_html=True`
 - **Layout**: Relies on Streamlit columns, tabs, and expanders for structure
 - **No backend**: Pure frontend application with static content
@@ -27,14 +27,15 @@ streamlit run app.py
 ```
 
 ## Code Patterns
-- **Navigation**: `selected = st.radio(...)` in sidebar then `if selected == "Page":`
+- **Navigation**: `cols = st.columns(len(options))` then `st.button()` in each column with `if st.button(): selected = option`
 - **Custom styling**: `st.markdown("""<style>...</style>""", unsafe_allow_html=True)`
 - **Layout**: `col1, col2 = st.columns([ratio1, ratio2])` for responsive design
 - **Interactive elements**: `st.tabs()`, `st.expander()` for FAQ sections
 - **Content**: `st.markdown()` with HTML for rich formatting
 
 ## File Structure
-- `app.py`: Main application (478 lines)
+- `app.py`: Main application (533 lines)
+- `assets/images/`: Static images including SVG placeholders
 - `docs/`: Program documentation (README.md, curriculum, implementation guides)
 - `README.md`: Project overview
 - `ABOUT.md`: Detailed program information
