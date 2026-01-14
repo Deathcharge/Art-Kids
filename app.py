@@ -154,6 +154,11 @@ st.markdown("""
     .element-container {
         margin-bottom: 1rem;
     }
+    
+    /* Add left padding to right column content */
+    .right-column-content {
+        padding-left: 2rem;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -572,7 +577,7 @@ elif selected == "Get Started":
         """, unsafe_allow_html=True)
     
     with col2:
-        st.markdown('<div style="margin-left: 2rem;">', unsafe_allow_html=True)
+        st.markdown('<div style="padding-left: 3rem;">', unsafe_allow_html=True)
         st.markdown("### What to Expect")
         
         st.markdown("""
