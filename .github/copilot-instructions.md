@@ -1,7 +1,7 @@
 # Art Kids Copilot Instructions
 
 ## Project Overview
-Art Kids is a Streamlit web application promoting a supplemental art education program for Phoenix City Schools. The app serves as a marketing and information hub for parents, schools, and partners interested in the Art Kids program.
+Art Kids is a Streamlit web application promoting a supplemental art education program for Phenix City Schools. The app serves as a marketing and information hub for parents, schools, and partners interested in the Art Kids program.
 
 ## Architecture
 - **Single-file Streamlit app** (`app.py`) with conditional page rendering

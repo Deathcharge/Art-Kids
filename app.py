@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Page config
 st.set_page_config(
-    page_title="Art Kids | Phoenix City Schools",
+    page_title="Art Kids | Phenix City Schools",
     page_icon="🎨",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -229,7 +229,7 @@ else:
 # ============ HOME PAGE ============
 if selected == "Home":
     st.markdown('<h1 class="hero-title">🎨 Art Kids</h1>', unsafe_allow_html=True)
-    st.markdown('<h3 style="color: #666; font-size: 1.5rem; margin: 0.5rem 0 2rem 0; line-height: 1.3;">Advancing Arts Education in Phoenix City Schools</h3>', unsafe_allow_html=True)
+    st.markdown('<h3 style="color: #666; font-size: 1.5rem; margin: 0.5rem 0 2rem 0; line-height: 1.3;">Advancing Arts Education in Phenix City Schools</h3>', unsafe_allow_html=True)
     
     col1, col2 = st.columns([1.5, 1])
     
@@ -240,7 +240,7 @@ if selected == "Home":
         Art Kids is a supplemental art program designed to provide talented and interested students 
         with advanced instruction in multiple mediums and techniques.
         
-        **Our Mission:** Every student in Phoenix City deserves access to quality art education, 
+        **Our Mission:** Every student in Phenix City deserves access to quality art education, 
         regardless of their school's funding.
         """)
         
@@ -312,7 +312,7 @@ elif selected == "About":
         
         **Our founder** has years of experience teaching visual arts and has guided students 
         to **state and national award wins**. Now, we're bringing that same excellence to 
-        Phoenix City schools.
+        Phenix City schools.
         """)
         
         st.markdown("""
@@ -354,7 +354,7 @@ elif selected == "Program Details":
             **Weekly Classes**
             - 📅 Every week (school year schedule)
             - ⏰ 3:30 PM – 4:30 PM (1 hour)
-            - 📍 Held at partner schools throughout Phoenix City
+            - 📍 Held at partner schools throughout Phenix City
             
             Classes rotate to different schools to benefit the community.
             """)
@@ -508,7 +508,7 @@ elif selected == "FAQ":
     
     with st.expander("Which schools host Art Kids?"):
         st.markdown("""
-        Art Kids classes rotate to different schools throughout Phoenix City to serve the community. 
+        Art Kids classes rotate to different schools throughout Phenix City to serve the community. 
         We're currently establishing partnerships with interested schools.
         
         **If your school is interested in hosting Art Kids:**
@@ -619,14 +619,14 @@ elif selected == "Get Started":
     
     > "Art Kids gave my daughter the opportunity to develop skills she never would have had access to 
     > through her school. She's more confident, more creative, and genuinely excited about art."
-    > — *Phoenix City Parent*
+    > — *Phenix City Parent*
     """)
 
 # ============ FOOTER ============
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center; padding: 2rem; color: #666; font-size: 0.9rem;">
-    <p><strong>Art Kids</strong> | Advancing Arts Education in Phoenix City Schools</p>
+    <p><strong>Art Kids</strong> | Advancing Arts Education in Phenix City Schools</p>
     <p>📞 706-573-0073 | 📧 anartlesson@gmail.com</p>
     <p style="margin-top: 1rem;">© 2026 Art Kids. All rights reserved.</p>
 </div>
