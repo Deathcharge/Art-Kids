@@ -577,27 +577,28 @@ elif selected == "Get Started":
         """, unsafe_allow_html=True)
     
     with col2:
-        st.markdown('<div style="padding-left: 3rem;">', unsafe_allow_html=True)
-        st.markdown("### What to Expect")
-        
         st.markdown("""
-        **Step 1: Initial Contact**
-        - Call or email us with basic info about your student
-        - We'll answer any questions you have
+        <div style="padding-left: 3rem;">
+        <h3>What to Expect</h3>
         
-        **Step 2: Meet & Discuss**
-        - Brief conversation about your student's interests & goals
-        - Learn about available class locations and times
+        <p><strong>Step 1: Initial Contact</strong><br>
+        - Call or email us with basic info about your student<br>
+        - We'll answer any questions you have</p>
         
-        **Step 3: Enroll**
-        - Register your student
-        - Complete parent/guardian consent forms
-        - Arrange payment
+        <p><strong>Step 2: Meet & Discuss</strong><br>
+        - Brief conversation about your student's interests & goals<br>
+        - Learn about available class locations and times</p>
         
-        **Step 4: First Class!**
-        - Your student attends their first Art Kids class
-        - They'll be ready to start developing their artistic skills
-        """)
+        <p><strong>Step 3: Enroll</strong><br>
+        - Register your student<br>
+        - Complete parent/guardian consent forms<br>
+        - Arrange payment</p>
+        
+        <p><strong>Step 4: First Class!</strong><br>
+        - Your student attends their first Art Kids class<br>
+        - They'll be ready to start developing their artistic skills</p>
+        </div>
+        """, unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
     
     st.markdown("---")
