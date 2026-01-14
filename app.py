@@ -250,6 +250,40 @@ if selected == "Home":
             <a href="mailto:anartlesson@gmail.com" class="cta-button">📧 Email Us</a>
         </div>
         """, unsafe_allow_html=True)
+        
+        # Pitch Deck Section
+        st.markdown("---")
+        st.markdown("### 📊 Program Presentation")
+        st.markdown("Download our comprehensive pitch deck to learn more about the Art Kids program:")
+        
+        col_preview, col_download = st.columns(2)
+        
+        with col_preview:
+            if st.button("👁️ Preview Pitch Deck", use_container_width=True):
+                st.markdown("""
+                <div style="border: 2px solid #e07a5f; border-radius: 8px; padding: 1rem; margin: 1rem 0; background: #f9f9f9;">
+                    <h4 style="color: #2a5f7f; margin: 0 0 0.5rem 0;">📋 Art Kids Pitch Deck</h4>
+                    <p style="margin: 0; font-size: 0.9rem; color: #666;">
+                        Our professional presentation covers the art education gap, program benefits, 
+                        implementation details, and success metrics. Perfect for schools, partners, and stakeholders.
+                    </p>
+                </div>
+                """, unsafe_allow_html=True)
+                st.markdown('<a href="pitch-deck.html" target="_blank" style="text-decoration: none;"><button style="background: #2a5f7f; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; width: 100%;">🔗 Open Full Presentation</button></a>', unsafe_allow_html=True)
+        
+        with col_download:
+            # Create download button for pitch deck
+            with open("pitch-deck.html", "r", encoding="utf-8") as f:
+                pitch_deck_content = f.read()
+            
+            st.download_button(
+                label="📥 Download Pitch Deck",
+                data=pitch_deck_content,
+                file_name="Art_Kids_Pitch_Deck.html",
+                mime="text/html",
+                use_container_width=True
+            )
+            st.markdown("*Perfect for offline viewing and sharing*")
     
     with col2:
         st.image("assets/images/art-kids-placeholder.svg", use_column_width=True)
