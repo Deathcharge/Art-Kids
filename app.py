@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
 import requests
 from datetime import datetime
 
@@ -37,19 +36,21 @@ st.markdown("""
     }
     
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 2.8rem;
         font-weight: 800;
         color: #2a5f7f;
-        margin: 2rem 0;
+        margin: 1.5rem 0 1rem 0;
+        line-height: 1.2;
     }
     
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         color: #2a5f7f;
         font-weight: 700;
-        margin: 2rem 0 1rem 0;
+        margin: 2rem 0 1.5rem 0;
         border-bottom: 3px solid #e07a5f;
         padding-bottom: 0.5rem;
+        clear: both;
     }
     
     .benefit-box {
@@ -57,7 +58,24 @@ st.markdown("""
         padding: 1.5rem;
         border-radius: 8px;
         border-left: 4px solid #2a5f7f;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .benefit-box h4 {
+        margin: 0 0 0.5rem 0;
+        color: #2a5f7f;
+        font-size: 1.1rem;
+    }
+    
+    .benefit-box p {
+        margin: 0;
+        color: #666;
+        line-height: 1.4;
     }
     
     .stat-card {
@@ -95,23 +113,60 @@ st.markdown("""
         background-color: #c96846;
         transform: translateY(-2px);
     }
+    
+    /* Responsive design fixes */
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2.2rem;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .benefit-box {
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-card {
+            padding: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+        }
+    }
+    
+    /* Prevent text overlap */
+    .stMarkdown {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+    
+    /* Ensure proper spacing in columns */
+    .element-container {
+        margin-bottom: 1rem;
+    }
 </style>
 """, unsafe_allow_html=True)
 
-# Navigation
-selected = option_menu(
-    menu_title="Art Kids",
-    options=["Home", "About", "Program Details", "Why Art Matters", "FAQ", "Get Started"],
-    icons=["house", "info-circle", "book", "lightbulb", "question-circle", "rocket"],
-    menu_icon="🎨",
-    default_index=0,
-    orientation="horizontal"
-)
+# Navigation using sidebar
+with st.sidebar:
+    st.markdown("### 🎨 Art Kids Navigation")
+    selected = st.radio(
+        "Choose a page:",
+        ["Home", "About", "Program Details", "Why Art Matters", "FAQ", "Get Started"],
+        index=0,
+        label_visibility="collapsed"
+    )
 
 # ============ HOME PAGE ============
 if selected == "Home":
     st.markdown('<h1 class="hero-title">🎨 Art Kids</h1>', unsafe_allow_html=True)
-    st.markdown('<h3 style="color: #666; font-size: 1.5rem;">Advancing Arts Education in Phoenix City Schools</h3>', unsafe_allow_html=True)
+    st.markdown('<h3 style="color: #666; font-size: 1.5rem; margin: 0.5rem 0 2rem 0; line-height: 1.3;">Advancing Arts Education in Phoenix City Schools</h3>', unsafe_allow_html=True)
     
     col1, col2 = st.columns([1.5, 1])
     

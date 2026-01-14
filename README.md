@@ -33,6 +33,33 @@ Art Kids provides supplemental art programming to schools that lack adequate art
 3. **Delivers quality instruction** - Professional art educators provide age-appropriate, engaging lessons
 4. **Maintains consistency** - Regular programming ensures students receive continuous art education
 
+## Web Application
+
+This repository includes a Streamlit web application that serves as a marketing and information hub for the Art Kids program.
+
+### Local Development
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the application
+streamlit run app.py
+```
+
+### Deployment on Streamlit Cloud
+
+The app is configured for free hosting on [Streamlit Cloud](https://streamlit.io/cloud):
+
+1. **Connect your GitHub repository** to Streamlit Cloud
+2. **Deploy the app** - Streamlit Cloud will automatically detect `app.py` as the main file
+3. **Configure settings** (optional):
+   - Main file: `app.py`
+   - Requirements file: `requirements.txt`
+4. **Access your live app** at the provided URL
+
+The app includes responsive design and works well on both desktop and mobile devices.
+
 ## Get Involved
 
 We welcome partnerships with:
